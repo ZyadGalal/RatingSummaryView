@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22406F77237D3E7800B5F213 /* RatingSummaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22406F76237D3E7800B5F213 /* RatingSummaryView.xib */; };
+		22406F79237D3F2700B5F213 /* RatingSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22406F78237D3F2700B5F213 /* RatingSummaryView.swift */; };
 		22729326237BE09E002ED1CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22729325237BE09E002ED1CD /* AppDelegate.swift */; };
 		22729328237BE09E002ED1CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22729327237BE09E002ED1CD /* SceneDelegate.swift */; };
 		2272932A237BE09E002ED1CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22729329237BE09E002ED1CD /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22406F76237D3E7800B5F213 /* RatingSummaryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingSummaryView.xib; sourceTree = "<group>"; };
+		22406F78237D3F2700B5F213 /* RatingSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingSummaryView.swift; sourceTree = "<group>"; };
 		22729322237BE09E002ED1CD /* RatingSummaryReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RatingSummaryReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22729325237BE09E002ED1CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22729327237BE09E002ED1CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				2272932E237BE09F002ED1CD /* Assets.xcassets */,
 				22729330237BE09F002ED1CD /* LaunchScreen.storyboard */,
 				22729333237BE09F002ED1CD /* Info.plist */,
+				22406F76237D3E7800B5F213 /* RatingSummaryView.xib */,
+				22406F78237D3F2700B5F213 /* RatingSummaryView.swift */,
 			);
 			path = RatingSummaryReview;
 			sourceTree = "<group>";
@@ -125,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22406F77237D3E7800B5F213 /* RatingSummaryView.xib in Resources */,
 				22729332237BE09F002ED1CD /* LaunchScreen.storyboard in Resources */,
 				2272932F237BE09F002ED1CD /* Assets.xcassets in Resources */,
 				2272932D237BE09E002ED1CD /* Main.storyboard in Resources */,
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22406F79237D3F2700B5F213 /* RatingSummaryView.swift in Sources */,
 				2272932A237BE09E002ED1CD /* ViewController.swift in Sources */,
 				22729326237BE09E002ED1CD /* AppDelegate.swift in Sources */,
 				22729328237BE09E002ED1CD /* SceneDelegate.swift in Sources */,
