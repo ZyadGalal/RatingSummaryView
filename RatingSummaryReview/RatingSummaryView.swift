@@ -22,6 +22,10 @@ import UIKit
     
     @IBOutlet weak var totalRatingLabel: UILabel!
     
+    //MARK :- Public Inspectable
+    @IBInspectable public var animationTime : CGFloat = 1.0
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -63,7 +67,7 @@ import UIKit
     }
     //set starts value for every progress view
     func setValuesForProgressBars(fiveStarsProgress : Float ,fourStarsProgress : Float ,threeStarsProgress : Float ,twoStarsProgress : Float ,oneStarsProgress : Float ){
-        UIView.animate(withDuration: 1.0) {
+        UIView.animate(withDuration: animationTime) {
             self.fiveRatingProgressView.setProgress(fiveStarsProgress, animated: true)
             self.fourRatingProgressView.setProgress(fourStarsProgress, animated: true)
             self.threeRatingProgressView.setProgress(threeStarsProgress, animated: true)
