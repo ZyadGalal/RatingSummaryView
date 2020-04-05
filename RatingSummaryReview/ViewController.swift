@@ -17,7 +17,8 @@ class ViewController: UIViewController {
 
     }
     override func viewDidAppear(_ animated: Bool) {
-        ratingView.setValueForStars(totalRating: 5, countOfFiveStars: 2, countOfFourStars: 2, countOfThreeStars: 0, countOfTwoStars: 0, countOfOneStars: 1)
+        ratingView.calculateStarsValues(totalRating: 5, fiveStars: 5, fourStars: 0, threeStars: 0, twoStars: 0, oneStar: 0)
+
 
     }
 

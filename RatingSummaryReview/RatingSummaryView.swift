@@ -37,33 +37,38 @@ import UIKit
     }
     
     
-    func setValueForStars(totalRating : Float , countOfFiveStars:Float , countOfFourStars:Float , countOfThreeStars:Float, countOfTwoStars:Float, countOfOneStars:Float){
-        if totalRating == (countOfFiveStars+countOfFourStars+countOfThreeStars+countOfTwoStars+countOfOneStars){
+    func calculateStarsValues(totalRating : Float , fiveStars:Float , fourStars:Float , threeStars:Float, twoStars:Float, oneStar:Float){
+        if totalRating == (fiveStars + fourStars + threeStars + twoStars + oneStar){
             let totalRating = totalRating
-            let stars5 = Float(countOfFiveStars / totalRating)
-            let stars4 = Float(countOfFourStars / totalRating)
-            let stars3 = Float(countOfThreeStars / totalRating)
-            let stars2 = Float(countOfTwoStars / totalRating)
-            let stars1 = Float(countOfOneStars / totalRating)
-            let average = Float(((countOfFiveStars * 5.0)+(countOfFourStars * 4.0)+(countOfThreeStars * 3.0)+(countOfTwoStars * 2.0)+(countOfOneStars * 1.0))/totalRating)
+            //calculate average for every progress view
+            let fiveStarsAverage = Float(fiveStars / totalRating)
+            let fourStarsAverage = Float(fourStars / totalRating)
+            let threeStarsAverage = Float(threeStars / totalRating)
+            let twoStarsAverage = Float(twoStars / totalRating)
+            let oneStarAverage = Float(oneStar / totalRating)
+            let average = Float(((fiveStars * 5.0) + (fourStars * 4.0) + (threeStars * 3.0) + (twoStars * 2.0) + (oneStar * 1.0)) / totalRating)
             
-            setValuesForProgressBars(fiveStars: stars5, fourStars: stars4, threeStars: stars3, twoStars: stars2, oneStars: stars1)
-            
+            //set text to total rating label
             self.totalRatingLabel.text = "\(totalRating) Ratings"
-            let doubleStr = String(format: "%.1f", average)
-            self.currentAverageLabel.text = "\(doubleStr)"
+            //formate average number to frist float digit
+            let averageFormatter = String(format: "%.1f", average)
+            self.currentAverageLabel.text = "\(averageFormatter)"
+            
+            setValuesForProgressBars(fiveStarsProgress: fiveStarsAverage, fourStarsProgress: fourStarsAverage, threeStarsProgress: threeStarsAverage, twoStarsProgress: twoStarsAverage, oneStarsProgress: oneStarAverage)
+            
         }
         else{
-            fatalError("total rating must be equal to count of all stars")
+            fatalError("total rating must be equal to the sum of all stars")
         }
     }
-    func setValuesForProgressBars(fiveStars : Float ,fourStars : Float ,threeStars : Float ,twoStars : Float ,oneStars : Float ){
-        UIView.animate(withDuration: 1) {
-            self.fiveRatingProgressView.setProgress(fiveStars, animated: true)
-            self.fourRatingProgressView.setProgress(fourStars, animated: true)
-            self.threeRatingProgressView.setProgress(threeStars, animated: true)
-            self.twoRatingProgressView.setProgress(twoStars, animated: true)
-            self.oneRatingProgressView.setProgress(oneStars, animated: true)
+    //set starts value for every progress view
+    func setValuesForProgressBars(fiveStarsProgress : Float ,fourStarsProgress : Float ,threeStarsProgress : Float ,twoStarsProgress : Float ,oneStarsProgress : Float ){
+        UIView.animate(withDuration: 1.0) {
+            self.fiveRatingProgressView.setProgress(fiveStarsProgress, animated: true)
+            self.fourRatingProgressView.setProgress(fourStarsProgress, animated: true)
+            self.threeRatingProgressView.setProgress(threeStarsProgress, animated: true)
+            self.twoRatingProgressView.setProgress(twoStarsProgress, animated: true)
+            self.oneRatingProgressView.setProgress(oneStarsProgress, animated: true)
         }
         
     }
