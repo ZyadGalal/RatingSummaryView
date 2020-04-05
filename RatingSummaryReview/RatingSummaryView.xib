@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,15 +19,30 @@
                 <outlet property="totalAverageLabel" destination="YuK-3E-YXq" id="fMg-mb-5Hn"/>
                 <outlet property="totalRatingLabel" destination="lrh-0N-SMN" id="EMx-Kq-Ych"/>
                 <outlet property="twoRatingProgressView" destination="JkP-js-ZIK" id="eiJ-0r-myc"/>
+                <outletCollection property="starsImageView" destination="Hea-pi-vWK" collectionClass="NSMutableArray" id="Yc6-Qh-YEU"/>
+                <outletCollection property="starsImageView" destination="TGm-sQ-rtE" collectionClass="NSMutableArray" id="yl7-sW-xpC"/>
+                <outletCollection property="starsImageView" destination="bbn-EM-nwE" collectionClass="NSMutableArray" id="6qn-Ab-DNU"/>
+                <outletCollection property="starsImageView" destination="6B8-tp-c76" collectionClass="NSMutableArray" id="YsR-ec-TiC"/>
+                <outletCollection property="starsImageView" destination="BqE-ce-TF3" collectionClass="NSMutableArray" id="uCZ-zx-PR2"/>
+                <outletCollection property="starsImageView" destination="AzH-40-sUj" collectionClass="NSMutableArray" id="hmy-gL-8KE"/>
+                <outletCollection property="starsImageView" destination="1Th-dP-qMm" collectionClass="NSMutableArray" id="O7B-jZ-gPf"/>
+                <outletCollection property="starsImageView" destination="YaK-UK-eyl" collectionClass="NSMutableArray" id="wQh-Tb-nhd"/>
+                <outletCollection property="starsImageView" destination="r86-16-gRT" collectionClass="NSMutableArray" id="rAK-jM-8cY"/>
+                <outletCollection property="starsImageView" destination="CKG-Qc-U4g" collectionClass="NSMutableArray" id="F0e-Ew-wga"/>
+                <outletCollection property="starsImageView" destination="dko-mi-wr6" collectionClass="NSMutableArray" id="IPa-y2-p1L"/>
+                <outletCollection property="starsImageView" destination="Hgi-De-KNt" collectionClass="NSMutableArray" id="84S-Sq-Itb"/>
+                <outletCollection property="starsImageView" destination="Xpy-oA-SBa" collectionClass="NSMutableArray" id="cfP-l0-KbF"/>
+                <outletCollection property="starsImageView" destination="fkA-Ju-MMT" collectionClass="NSMutableArray" id="4oV-aO-LUb"/>
+                <outletCollection property="starsImageView" destination="l3e-eW-3bR" collectionClass="NSMutableArray" id="Smk-08-ku3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="T5Y-t7-3KP">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lk-QN-PzJ">
-                    <rect key="frame" x="0.0" y="384" width="414" height="128"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating &amp; Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKk-xT-0uV">
                             <rect key="frame" x="8" y="8" width="398" height="20.5"/>
@@ -284,6 +299,7 @@
                 <constraint firstItem="7lk-QN-PzJ" firstAttribute="centerY" secondItem="T5Y-t7-3KP" secondAttribute="centerY" id="flk-wg-tHi"/>
                 <constraint firstItem="7lk-QN-PzJ" firstAttribute="centerX" secondItem="T5Y-t7-3KP" secondAttribute="centerX" id="rT5-kA-Fca"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="adb-wv-cXj"/>
             <point key="canvasLocation" x="-103" y="45"/>
         </view>

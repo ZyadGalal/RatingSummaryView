@@ -10,7 +10,10 @@ import UIKit
 
 @IBDesignable
  class RatingSummaryView: UIView {
+    //IBOutlet Collection
+    @IBOutlet var starsImageView: [UIImageView]!
 
+    //IBOutlet
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var currentAverageLabel: UILabel!
     @IBOutlet weak var totalAverageLabel: UILabel!
@@ -33,7 +36,13 @@ import UIKit
             oneRatingProgressView.tintColor = progressTint
         }
     }
-
+    @IBInspectable public var starsImage : UIImage?{
+        didSet{
+            for image in starsImageView {
+                image.image = starsImage
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,7 +85,7 @@ import UIKit
     }
     //set starts value for every progress view
     func setValuesForProgressBars(fiveStarsProgress : Float ,fourStarsProgress : Float ,threeStarsProgress : Float ,twoStarsProgress : Float ,oneStarsProgress : Float ){
-        UIView.animate(withDuration: animationTime) {
+        UIView.animate(withDuration: TimeInterval(animationTime)) {
             self.fiveRatingProgressView.setProgress(fiveStarsProgress, animated: true)
             self.fourRatingProgressView.setProgress(fourStarsProgress, animated: true)
             self.threeRatingProgressView.setProgress(threeStarsProgress, animated: true)
