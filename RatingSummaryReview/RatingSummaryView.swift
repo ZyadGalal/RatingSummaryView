@@ -24,6 +24,15 @@ import UIKit
     
     //MARK :- Public Inspectable
     @IBInspectable public var animationTime : CGFloat = 1.0
+    @IBInspectable public var progressTint : UIColor = UIColor.darkGray {
+        didSet{
+            fiveRatingProgressView.tintColor = progressTint
+            fourRatingProgressView.tintColor = progressTint
+            threeRatingProgressView.tintColor = progressTint
+            twoRatingProgressView.tintColor = progressTint
+            oneRatingProgressView.tintColor = progressTint
+        }
+    }
 
     
     override init(frame: CGRect) {
