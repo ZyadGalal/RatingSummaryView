@@ -15,6 +15,7 @@
 		2272932D237BE09E002ED1CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2272932B237BE09E002ED1CD /* Main.storyboard */; };
 		2272932F237BE09F002ED1CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2272932E237BE09F002ED1CD /* Assets.xcassets */; };
 		22729332237BE09F002ED1CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22729330237BE09F002ED1CD /* LaunchScreen.storyboard */; };
+		3200A7AC243B7C560095EB2C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3200A7AB243B7C560095EB2C /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2272932E237BE09F002ED1CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22729331237BE09F002ED1CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22729333237BE09F002ED1CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3200A7AB243B7C560095EB2C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				22729333237BE09F002ED1CD /* Info.plist */,
 				22406F76237D3E7800B5F213 /* RatingSummaryView.xib */,
 				22406F78237D3F2700B5F213 /* RatingSummaryView.swift */,
+				3200A7AB243B7C560095EB2C /* UIViewExtension.swift */,
 			);
 			path = RatingSummaryReview;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3200A7AC243B7C560095EB2C /* UIViewExtension.swift in Sources */,
 				22406F79237D3F2700B5F213 /* RatingSummaryView.swift in Sources */,
 				2272932A237BE09E002ED1CD /* ViewController.swift in Sources */,
 				22729326237BE09E002ED1CD /* AppDelegate.swift in Sources */,
