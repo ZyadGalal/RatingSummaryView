@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  RatingSummaryReview
 //
-//  Created by macOS on 11/13/19.
-//  Copyright © 2019 macOS. All rights reserved.
+//  Created by ZyadGalal on 11/13/19.
+//  Copyright © 2019 ZyadGalal. All rights reserved.
 //
 
 import UIKit

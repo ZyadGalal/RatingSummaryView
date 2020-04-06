@@ -2,8 +2,8 @@
 //  RatingSummaryView.swift
 //  RatingSummaryReview
 //
-//  Created by macOS on 11/14/19.
-//  Copyright © 2019 macOS. All rights reserved.
+//  Created by ZyadGalal on 11/14/19.
+//  Copyright © 2019 ZyadGalal. All rights reserved.
 //
 
 import UIKit
@@ -59,16 +59,16 @@ import UIKit
     }
     
     
-    func calculateStarsValues(totalRating : Float , fiveStars:Float , fourStars:Float , threeStars:Float, twoStars:Float, oneStar:Float){
-        if totalRating == (fiveStars + fourStars + threeStars + twoStars + oneStar){
+    func calculateStarsValues(totalRating : Int , fiveStars:Float , fourStars:Float , threeStars:Float, twoStars:Float, oneStar:Float){
+        if Float(totalRating) == (fiveStars + fourStars + threeStars + twoStars + oneStar){
             let totalRating = totalRating
             //calculate average for every progress view
-            let fiveStarsAverage = Float(fiveStars / totalRating)
-            let fourStarsAverage = Float(fourStars / totalRating)
-            let threeStarsAverage = Float(threeStars / totalRating)
-            let twoStarsAverage = Float(twoStars / totalRating)
-            let oneStarAverage = Float(oneStar / totalRating)
-            let average = Float(((fiveStars * 5.0) + (fourStars * 4.0) + (threeStars * 3.0) + (twoStars * 2.0) + (oneStar * 1.0)) / totalRating)
+            let fiveStarsAverage = fiveStars / Float(totalRating)
+            let fourStarsAverage = fourStars / Float(totalRating)
+            let threeStarsAverage = threeStars / Float(totalRating)
+            let twoStarsAverage = twoStars / Float(totalRating)
+            let oneStarAverage = oneStar / Float(totalRating)
+            let average = ((fiveStars * 5.0) + (fourStars * 4.0) + (threeStars * 3.0) + (twoStars * 2.0) + (oneStar * 1.0)) / Float(totalRating)
             
             //set text to total rating label
             self.totalRatingLabel.text = "\(totalRating) Ratings"
