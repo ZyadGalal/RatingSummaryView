@@ -106,15 +106,16 @@ private extension RatingSummaryView {
         // Adding custom subview on top of our view
         addSubview(containerView)
         
+//        set constraints for containerView
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[childView]|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: ["childView": containerView!]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[childView]|",
-                                                      options: [],
-                                                      metrics: nil,
-                                                      views: ["childView": containerView!]))
+        NSLayoutConstraint.activate([
+            containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            containerView.topAnchor.constraint(equalTo: self.topAnchor),
+            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+
+        ])
+
     }
 }
 
