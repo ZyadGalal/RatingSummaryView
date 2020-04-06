@@ -6,7 +6,7 @@
 //  Copyright © 2020 macOS. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIView {
     /** Loads instance from nib with the same name. */
