@@ -17,7 +17,8 @@ class ViewController: UIViewController {
 
     }
     override func viewDidAppear(_ animated: Bool) {
-        ratingView.calculateStarsValues(totalRating: 5, fiveStars: 2, fourStars: 2, threeStars: 0, twoStars: 0, oneStar: 1)
+        ratingView.setupRatingView(animationTime: 15, isProgressStyleGradient: true, progressTint: nil, startProgressTint: UIColor.black, endProgressTint: UIColor.blue, starsImage: nil, barsSpacing: nil)
+        ratingView.calculateStarsValues(totalRating: 5, fiveStars: 2, fourStars: 2, threeStars: 1, twoStars: 0, oneStar: 0)
 
     }
 

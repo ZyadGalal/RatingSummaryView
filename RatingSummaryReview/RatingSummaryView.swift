@@ -12,50 +12,54 @@ import UIKit
  class RatingSummaryView: UIView {
     //IBOutlet Collection
     @IBOutlet var starsImageView: [UIImageView]!
-
+    @IBOutlet weak var barContainerStackView: UIStackView!
+    
     //IBOutlet
-    @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var currentAverageLabel: UILabel!
-    @IBOutlet weak var totalAverageLabel: UILabel!
-    @IBOutlet weak var fiveRatingProgressView: UIProgressView!
-    @IBOutlet weak var fourRatingProgressView: UIProgressView!
-    @IBOutlet weak var threeRatingProgressView: UIProgressView!
-    @IBOutlet weak var twoRatingProgressView: UIProgressView!
-    @IBOutlet weak var oneRatingProgressView: UIProgressView!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var currentAverageLabel: UILabel!
+    @IBOutlet private weak var totalAverageLabel: UILabel!
+    @IBOutlet private weak var fiveRatingProgressView: UIProgressView!
+    @IBOutlet private weak var fourRatingProgressView: UIProgressView!
+    @IBOutlet private weak var threeRatingProgressView: UIProgressView!
+    @IBOutlet private weak var twoRatingProgressView: UIProgressView!
+    @IBOutlet private weak var oneRatingProgressView: UIProgressView!
+    @IBOutlet private weak var totalRatingLabel: UILabel!
     
-    @IBOutlet weak var totalRatingLabel: UILabel!
-    
-    //MARK :- Public Inspectable
-    @IBInspectable public var animationTime: CGFloat = 1.0
-    @IBInspectable public var isProgressStyleGradient: Bool = false {
+    //MARK :- Private Inspectable
+    @IBInspectable private (set) var animationTime: CGFloat = 1.0
+    @IBInspectable private (set) var isProgressStyleGradient: Bool = false {
         didSet {
             progressStyle = isProgressStyleGradient == false ? .Solid : .Gradient
             setProgressTintColor()
         }
     }
-    @IBInspectable public var progressTint: UIColor = UIColor.darkGray {
+    @IBInspectable private (set) var progressTint: UIColor = UIColor.darkGray {
         didSet {
             setProgressTintColor()
         }
     }
-    @IBInspectable public var startProgressTint: UIColor = UIColor.darkGray {
+    @IBInspectable private (set) var startProgressTint: UIColor = UIColor.darkGray {
         didSet {
             setProgressTintColor()
         }
     }
-    @IBInspectable public var endProgressTint: UIColor = UIColor.darkGray {
+    @IBInspectable private (set) var endProgressTint: UIColor = UIColor.darkGray {
         didSet {
             setProgressTintColor()
         }
     }
-    @IBInspectable public var starsImage: UIImage?{
+    @IBInspectable private (set) var starsImage: UIImage?{
         didSet {
             for image in starsImageView {
                 image.image = starsImage
             }
         }
     }
-    
+    @IBInspectable private (set) var barsSpacing : CGFloat = 1 {
+        didSet {
+            barContainerStackView.spacing = barsSpacing
+        }
+    }
     //Private Variables
     private var progressStyle: ProgressBarColorStyle = .Solid
     
@@ -73,9 +77,32 @@ import UIKit
         xibSetup()
     }
     
+    func setupRatingView(animationTime: CGFloat?,isProgressStyleGradient: Bool?,progressTint: UIColor?,startProgressTint: UIColor?,endProgressTint: UIColor?,starsImage: UIImage?,barsSpacing: CGFloat?){
+        if let animationTime = animationTime {
+            self.animationTime = animationTime
+        }
+        if let GradientProgressBar = isProgressStyleGradient {
+            self.isProgressStyleGradient = GradientProgressBar
+        }
+        if let progressTint = progressTint {
+            self.progressTint = progressTint
+        }
+        if let startProgressTint = startProgressTint {
+            self.startProgressTint = startProgressTint
+        }
+        if let endProgressTint = endProgressTint {
+            self.endProgressTint = endProgressTint
+        }
+        if let stars = starsImage {
+            self.starsImage = stars
+        }
+        if let barsSpacing = barsSpacing {
+            self.barsSpacing = barsSpacing
+        }
+    }
     
-    func calculateStarsValues(totalRating: Int , fiveStars: Float , fourStars: Float , threeStars: Float, twoStars: Float, oneStar: Float){
-        if Float(totalRating) == (fiveStars + fourStars + threeStars + twoStars + oneStar){
+    func calculateStarsValues(totalRating: Int,fiveStars: Float,fourStars: Float,threeStars: Float,twoStars: Float,oneStar: Float){
+        if Float(totalRating) == (fiveStars + fourStars + threeStars + twoStars + oneStar) {
             let totalRating = totalRating
             //calculate average for every progress view
             let fiveStarsAverage = fiveStars / Float(totalRating)
@@ -97,8 +124,9 @@ import UIKit
             fatalError("total rating must be equal to the sum of all stars")
         }
     }
+    
     //set starts value for every progress view
-    private func setValuesForProgressBars(fiveStarsProgress: Float ,fourStarsProgress: Float ,threeStarsProgress: Float ,twoStarsProgress: Float ,oneStarsProgress: Float ){
+    private func setValuesForProgressBars(fiveStarsProgress: Float,fourStarsProgress: Float,threeStarsProgress: Float,twoStarsProgress: Float,oneStarsProgress: Float){
         UIView.animate(withDuration: TimeInterval(animationTime)) {
             self.fiveRatingProgressView.setProgress(fiveStarsProgress, animated: true)
             self.fourRatingProgressView.setProgress(fourStarsProgress, animated: true)
@@ -106,8 +134,8 @@ import UIKit
             self.twoRatingProgressView.setProgress(twoStarsProgress, animated: true)
             self.oneRatingProgressView.setProgress(oneStarsProgress, animated: true)
         }
-        
     }
+    
     private func setProgressTintColor(){
         if progressStyle == .Solid {
             fiveRatingProgressView.tintColor = progressTint
@@ -123,10 +151,10 @@ import UIKit
             threeRatingProgressView.progressImage = gradientImage
             twoRatingProgressView.progressImage = gradientImage
             oneRatingProgressView.progressImage = gradientImage
-
         }
     }
 }
+
 private extension RatingSummaryView {
     
     func xibSetup() {
@@ -146,7 +174,6 @@ private extension RatingSummaryView {
             containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
 
         ])
-
     }
 }
 

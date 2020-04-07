@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingSummaryView" customModule="RatingSummaryReview" customModuleProvider="target">
             <connections>
+                <outlet property="barContainerStackView" destination="U3G-TF-jyk" id="EgZ-z1-CWV"/>
                 <outlet property="containerView" destination="7lk-QN-PzJ" id="OVX-bh-J3N"/>
                 <outlet property="currentAverageLabel" destination="TRa-2E-IdS" id="If0-P0-xbC"/>
                 <outlet property="fiveRatingProgressView" destination="Fn8-B7-3U7" id="VDP-QX-BMz"/>
@@ -42,7 +43,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lk-QN-PzJ">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                    <rect key="frame" x="0.0" y="2.5" width="414" height="85"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRa-2E-IdS">
                             <rect key="frame" x="8" y="8" width="64" height="48"/>
@@ -51,15 +52,15 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of 5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuK-3E-YXq">
-                            <rect key="frame" x="11.5" y="64" width="57.5" height="19.5"/>
+                            <rect key="frame" x="11.5" y="56" width="57.5" height="19.5"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                             <color key="textColor" red="0.45490640399999999" green="0.45489609240000001" blue="0.45489811899999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMd-3k-vSR">
-                            <rect key="frame" x="88" y="8" width="318" height="54"/>
+                            <rect key="frame" x="88" y="5" width="318" height="54"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="U3G-TF-jyk">
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="U3G-TF-jyk">
                                     <rect key="frame" x="0.0" y="0.0" width="318" height="54"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NG9-DW-5h5">
@@ -92,6 +93,9 @@
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Fn8-B7-3U7">
                                                     <rect key="frame" x="65" y="4" width="253" height="2"/>
                                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="gbI-A6-PeV"/>
+                                                    </constraints>
                                                 </progressView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,20 +112,20 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBn-3s-hcO">
                                             <rect key="frame" x="0.0" y="11" width="318" height="10"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="uPw-xd-OKy">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uPw-xd-OKy">
                                                     <rect key="frame" x="10" y="0.0" width="40" height="10"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_star_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="AzH-40-sUj">
-                                                            <rect key="frame" x="0.0" y="1" width="10" height="9"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_star_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="1Th-dP-qMm">
-                                                            <rect key="frame" x="10" y="1" width="10" height="9"/>
+                                                            <rect key="frame" x="10" y="0.0" width="10" height="10"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_star_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="YaK-UK-eyl">
-                                                            <rect key="frame" x="20" y="1" width="10" height="9"/>
+                                                            <rect key="frame" x="20" y="0.0" width="10" height="10"/>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baseline_star_black_18dp" translatesAutoresizingMaskIntoConstraints="NO" id="r86-16-gRT">
-                                                            <rect key="frame" x="30" y="1" width="10" height="9"/>
+                                                            <rect key="frame" x="30" y="0.0" width="10" height="10"/>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
@@ -132,6 +136,9 @@
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jed-tI-uMg">
                                                     <rect key="frame" x="65" y="4" width="253" height="2"/>
                                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="xF1-W9-MOS"/>
+                                                    </constraints>
                                                 </progressView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -168,6 +175,9 @@
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-MH-NFB">
                                                     <rect key="frame" x="65" y="4" width="253" height="2"/>
                                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="RJm-CN-dTv"/>
+                                                    </constraints>
                                                 </progressView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,6 +211,9 @@
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JkP-js-ZIK">
                                                     <rect key="frame" x="65" y="4" width="253" height="2"/>
                                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="ZCt-6b-flo"/>
+                                                    </constraints>
                                                 </progressView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -231,6 +244,9 @@
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y4e-7W-Fko">
                                                     <rect key="frame" x="65" y="4" width="253" height="2"/>
                                                     <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="QDH-gC-ZE2"/>
+                                                    </constraints>
                                                 </progressView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -249,7 +265,6 @@
                                         <constraint firstItem="gkW-Ta-OiS" firstAttribute="trailing" secondItem="p70-9a-xYN" secondAttribute="trailing" id="ZwT-JW-DD2"/>
                                         <constraint firstItem="uPw-xd-OKy" firstAttribute="trailing" secondItem="i1U-HL-4pq" secondAttribute="trailing" id="eJZ-w6-Rix"/>
                                         <constraint firstItem="IBW-aW-xgS" firstAttribute="trailing" secondItem="uPw-xd-OKy" secondAttribute="trailing" id="p7P-2E-kDJ"/>
-                                        <constraint firstAttribute="height" constant="54" id="xK1-Fj-xg6"/>
                                     </constraints>
                                 </stackView>
                             </subviews>
@@ -262,7 +277,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59718 Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrh-0N-SMN">
-                            <rect key="frame" x="308" y="63.5" width="98" height="20"/>
+                            <rect key="frame" x="308" y="60.5" width="98" height="18"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.42353367809999998" green="0.42352390290000003" blue="0.42352586980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
@@ -270,17 +285,15 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="EMd-3k-vSR" firstAttribute="top" secondItem="7lk-QN-PzJ" secondAttribute="top" constant="5" id="0OZ-3N-xU7"/>
                         <constraint firstItem="lrh-0N-SMN" firstAttribute="top" secondItem="EMd-3k-vSR" secondAttribute="bottom" constant="1.5" id="6Sg-zP-5HJ"/>
                         <constraint firstItem="TRa-2E-IdS" firstAttribute="leading" secondItem="7lk-QN-PzJ" secondAttribute="leading" constant="8" id="Cla-jR-YFd"/>
-                        <constraint firstItem="lrh-0N-SMN" firstAttribute="bottom" secondItem="YuK-3E-YXq" secondAttribute="bottom" id="DfY-qS-jw9"/>
                         <constraint firstItem="lrh-0N-SMN" firstAttribute="trailing" secondItem="EMd-3k-vSR" secondAttribute="trailing" id="EhW-LU-yJy"/>
                         <constraint firstAttribute="trailing" secondItem="EMd-3k-vSR" secondAttribute="trailing" constant="8" id="JLk-cO-Ck8"/>
-                        <constraint firstItem="TRa-2E-IdS" firstAttribute="top" secondItem="7lk-QN-PzJ" secondAttribute="top" constant="8" id="Jlh-h4-tPl"/>
-                        <constraint firstAttribute="height" constant="90" id="VM5-90-M7Z"/>
-                        <constraint firstItem="YuK-3E-YXq" firstAttribute="top" secondItem="TRa-2E-IdS" secondAttribute="bottom" constant="8" id="Y5W-08-4Ip"/>
+                        <constraint firstItem="YuK-3E-YXq" firstAttribute="top" secondItem="TRa-2E-IdS" secondAttribute="bottom" id="Y5W-08-4Ip"/>
                         <constraint firstItem="EMd-3k-vSR" firstAttribute="leading" secondItem="TRa-2E-IdS" secondAttribute="trailing" constant="16" id="bBR-rz-XSV"/>
                         <constraint firstAttribute="bottom" secondItem="lrh-0N-SMN" secondAttribute="bottom" constant="6.5" id="fkv-ee-666"/>
-                        <constraint firstItem="EMd-3k-vSR" firstAttribute="top" secondItem="TRa-2E-IdS" secondAttribute="top" id="o62-Lf-r7M"/>
+                        <constraint firstItem="TRa-2E-IdS" firstAttribute="centerY" secondItem="EMd-3k-vSR" secondAttribute="centerY" id="unO-qO-OKx"/>
                         <constraint firstItem="YuK-3E-YXq" firstAttribute="centerX" secondItem="TRa-2E-IdS" secondAttribute="centerX" id="zT5-eu-ZLV"/>
                     </constraints>
                 </view>
