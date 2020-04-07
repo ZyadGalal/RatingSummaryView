@@ -26,40 +26,38 @@ import UIKit
     @IBOutlet weak var totalRatingLabel: UILabel!
     
     //MARK :- Public Inspectable
-    //MARK :- Public Inspectable
-    @IBInspectable public var animationTime : CGFloat = 1.0
-    @IBInspectable public var isProgressStyleGradient : Bool = false {
-        didSet{
+    @IBInspectable public var animationTime: CGFloat = 1.0
+    @IBInspectable public var isProgressStyleGradient: Bool = false {
+        didSet {
             progressStyle = isProgressStyleGradient == false ? .Solid : .Gradient
             setProgressTintColor()
         }
     }
-    @IBInspectable public var progressTint : UIColor = UIColor.darkGray {
-        didSet{
-            setProgressTintColor()
-
-        }
-    }
-    @IBInspectable public var startProgressTint : UIColor = UIColor.darkGray {
-        didSet{
-            
+    @IBInspectable public var progressTint: UIColor = UIColor.darkGray {
+        didSet {
             setProgressTintColor()
         }
     }
-    @IBInspectable public var endProgressTint : UIColor = UIColor.darkGray {
-        didSet{
+    @IBInspectable public var startProgressTint: UIColor = UIColor.darkGray {
+        didSet {
             setProgressTintColor()
         }
     }
-    @IBInspectable public var starsImage : UIImage?{
-        didSet{
+    @IBInspectable public var endProgressTint: UIColor = UIColor.darkGray {
+        didSet {
+            setProgressTintColor()
+        }
+    }
+    @IBInspectable public var starsImage: UIImage?{
+        didSet {
             for image in starsImageView {
                 image.image = starsImage
             }
         }
     }
     
-    var progressStyle : ProgressBarColorStyle = .Solid
+    //Private Variables
+    private var progressStyle: ProgressBarColorStyle = .Solid
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,7 +74,7 @@ import UIKit
     }
     
     
-    func calculateStarsValues(totalRating : Int , fiveStars:Float , fourStars:Float , threeStars:Float, twoStars:Float, oneStar:Float){
+    func calculateStarsValues(totalRating: Int , fiveStars: Float , fourStars: Float , threeStars: Float, twoStars: Float, oneStar: Float){
         if Float(totalRating) == (fiveStars + fourStars + threeStars + twoStars + oneStar){
             let totalRating = totalRating
             //calculate average for every progress view
@@ -95,13 +93,12 @@ import UIKit
             
             setValuesForProgressBars(fiveStarsProgress: fiveStarsAverage, fourStarsProgress: fourStarsAverage, threeStarsProgress: threeStarsAverage, twoStarsProgress: twoStarsAverage, oneStarsProgress: oneStarAverage)
             
-        }
-        else{
+        }else{
             fatalError("total rating must be equal to the sum of all stars")
         }
     }
     //set starts value for every progress view
-    func setValuesForProgressBars(fiveStarsProgress : Float ,fourStarsProgress : Float ,threeStarsProgress : Float ,twoStarsProgress : Float ,oneStarsProgress : Float ){
+    private func setValuesForProgressBars(fiveStarsProgress: Float ,fourStarsProgress: Float ,threeStarsProgress: Float ,twoStarsProgress: Float ,oneStarsProgress: Float ){
         UIView.animate(withDuration: TimeInterval(animationTime)) {
             self.fiveRatingProgressView.setProgress(fiveStarsProgress, animated: true)
             self.fourRatingProgressView.setProgress(fourStarsProgress, animated: true)
