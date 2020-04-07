@@ -26,14 +26,29 @@ import UIKit
     @IBOutlet weak var totalRatingLabel: UILabel!
     
     //MARK :- Public Inspectable
+    //MARK :- Public Inspectable
     @IBInspectable public var animationTime : CGFloat = 1.0
+    @IBInspectable public var isProgressStyleGradient : Bool = false {
+        didSet{
+            progressStyle = isProgressStyleGradient == false ? .Solid : .Gradient
+            setProgressTintColor()
+        }
+    }
     @IBInspectable public var progressTint : UIColor = UIColor.darkGray {
         didSet{
-            fiveRatingProgressView.tintColor = progressTint
-            fourRatingProgressView.tintColor = progressTint
-            threeRatingProgressView.tintColor = progressTint
-            twoRatingProgressView.tintColor = progressTint
-            oneRatingProgressView.tintColor = progressTint
+            setProgressTintColor()
+
+        }
+    }
+    @IBInspectable public var startProgressTint : UIColor = UIColor.darkGray {
+        didSet{
+            
+            setProgressTintColor()
+        }
+    }
+    @IBInspectable public var endProgressTint : UIColor = UIColor.darkGray {
+        didSet{
+            setProgressTintColor()
         }
     }
     @IBInspectable public var starsImage : UIImage?{
@@ -43,6 +58,8 @@ import UIKit
             }
         }
     }
+    
+    var progressStyle : ProgressBarColorStyle = .Solid
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -94,7 +111,24 @@ import UIKit
         }
         
     }
-    
+    private func setProgressTintColor(){
+        if progressStyle == .Solid {
+            fiveRatingProgressView.tintColor = progressTint
+            fourRatingProgressView.tintColor = progressTint
+            threeRatingProgressView.tintColor = progressTint
+            twoRatingProgressView.tintColor = progressTint
+            oneRatingProgressView.tintColor = progressTint
+        }
+        else if progressStyle == .Gradient {
+            guard let gradientImage = UIImage.gradientImage(with: fiveRatingProgressView.frame, colors: [startProgressTint.cgColor , endProgressTint.cgColor], locations: nil) else{return}
+            fiveRatingProgressView.progressImage = gradientImage
+            fourRatingProgressView.progressImage = gradientImage
+            threeRatingProgressView.progressImage = gradientImage
+            twoRatingProgressView.progressImage = gradientImage
+            oneRatingProgressView.progressImage = gradientImage
+
+        }
+    }
 }
 private extension RatingSummaryView {
     
