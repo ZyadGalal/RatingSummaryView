@@ -12,6 +12,9 @@ import UIKit
  class RatingSummaryView: UIView {
     //IBOutlet Collection
     @IBOutlet var starsImageView: [UIImageView]!
+    @IBOutlet var progressBarWidthConstraints: [NSLayoutConstraint]!
+    
+    //IBOutlet
     @IBOutlet weak var barContainerStackView: UIStackView!
     
     //IBOutlet
@@ -57,9 +60,21 @@ import UIKit
     }
     @IBInspectable private (set) var barsSpacing : CGFloat = 1 {
         didSet {
+            barsSpacing = max(1, barsSpacing)
             barContainerStackView.spacing = barsSpacing
         }
     }
+    
+    @IBInspectable private (set) var barWidth : CGFloat = 2 {
+        didSet {
+            barWidth = max(1, barWidth)
+            for barWidthConstraint in progressBarWidthConstraints {
+                barWidthConstraint.constant = barWidth
+                self.layoutIfNeeded()
+            }
+        }
+    }
+    
     //Private Variables
     private var progressStyle: ProgressBarColorStyle = .Solid
     
@@ -77,7 +92,8 @@ import UIKit
         xibSetup()
     }
     
-    func setupRatingView(animationTime: CGFloat?,isProgressStyleGradient: Bool?,progressTint: UIColor?,startProgressTint: UIColor?,endProgressTint: UIColor?,starsImage: UIImage?,barsSpacing: CGFloat?){
+    func setupRatingView(animationTime: CGFloat?,isProgressStyleGradient: Bool?,progressTint: UIColor?,startProgressTint: UIColor?,endProgressTint: UIColor?,starsImage: UIImage?,barsSpacing: CGFloat?,barWidth: CGFloat?){
+        
         if let animationTime = animationTime {
             self.animationTime = animationTime
         }
@@ -98,6 +114,9 @@ import UIKit
         }
         if let barsSpacing = barsSpacing {
             self.barsSpacing = barsSpacing
+        }
+        if let barWidth = barWidth {
+            self.barWidth = barWidth
         }
     }
     
@@ -145,7 +164,7 @@ import UIKit
             oneRatingProgressView.tintColor = progressTint
         }
         else if progressStyle == .Gradient {
-            guard let gradientImage = UIImage.gradientImage(with: fiveRatingProgressView.frame, colors: [startProgressTint.cgColor , endProgressTint.cgColor], locations: nil) else{return}
+            guard let gradientImage = UIImage.gradientImage(with: fiveRatingProgressView.frame, colors: [startProgressTint.cgColor , endProgressTint.cgColor]) else{return}
             fiveRatingProgressView.progressImage = gradientImage
             fourRatingProgressView.progressImage = gradientImage
             threeRatingProgressView.progressImage = gradientImage

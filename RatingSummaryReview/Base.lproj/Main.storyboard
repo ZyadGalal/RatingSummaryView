@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XVc-Hz-NjJ" customClass="RatingSummaryView" customModule="RatingSummaryReview" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="418"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="810"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isProgressStyleGradient" value="YES"/>
@@ -34,7 +34,10 @@
                                         <real key="value" value="80"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="barsSpacing">
-                                        <real key="value" value="60"/>
+                                        <real key="value" value="-5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="barWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -44,7 +47,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XVc-Hz-NjJ" secondAttribute="trailing" id="3uG-OH-QQR"/>
                             <constraint firstItem="XVc-Hz-NjJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MKn-tc-BgL"/>
                             <constraint firstItem="XVc-Hz-NjJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WgO-o8-MRy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XVc-Hz-NjJ" secondAttribute="bottom" constant="400" id="zBj-Kw-Scz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XVc-Hz-NjJ" secondAttribute="bottom" constant="8" id="zBj-Kw-Scz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
