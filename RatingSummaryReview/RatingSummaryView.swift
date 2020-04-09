@@ -121,15 +121,16 @@ import UIKit
     }
     
     func calculateStarsValues(totalRating: Int,fiveStars: Float,fourStars: Float,threeStars: Float,twoStars: Float,oneStar: Float){
-        if Float(totalRating) == (fiveStars + fourStars + threeStars + twoStars + oneStar) {
-            let totalRating = totalRating
+        let totalRating = Float(totalRating)
+
+        if totalRating == (fiveStars + fourStars + threeStars + twoStars + oneStar) {
             //calculate average for every progress view
-            let fiveStarsAverage = fiveStars / Float(totalRating)
-            let fourStarsAverage = fourStars / Float(totalRating)
-            let threeStarsAverage = threeStars / Float(totalRating)
-            let twoStarsAverage = twoStars / Float(totalRating)
-            let oneStarAverage = oneStar / Float(totalRating)
-            let average = ((fiveStars * 5.0) + (fourStars * 4.0) + (threeStars * 3.0) + (twoStars * 2.0) + (oneStar * 1.0)) / Float(totalRating)
+            let fiveStarsAverage = fiveStars / totalRating
+            let fourStarsAverage = fourStars / totalRating
+            let threeStarsAverage = threeStars / totalRating
+            let twoStarsAverage = twoStars / totalRating
+            let oneStarAverage = oneStar / totalRating
+            let average = ((fiveStars * 5.0) + (fourStars * 4.0) + (threeStars * 3.0) + (twoStars * 2.0) + (oneStar * 1.0)) / totalRating
             
             //set text to total rating label
             self.totalRatingLabel.text = "\(totalRating) Ratings"

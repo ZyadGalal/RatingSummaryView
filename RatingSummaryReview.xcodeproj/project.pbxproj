@@ -66,6 +66,7 @@
 		22729324237BE09E002ED1CD /* RatingSummaryReview */ = {
 			isa = PBXGroup;
 			children = (
+				32CF57EB243F0CF900CA58E1 /* Extension */,
 				22729325237BE09E002ED1CD /* AppDelegate.swift */,
 				22729327237BE09E002ED1CD /* SceneDelegate.swift */,
 				22729329237BE09E002ED1CD /* ViewController.swift */,
@@ -75,11 +76,18 @@
 				22729333237BE09F002ED1CD /* Info.plist */,
 				22406F76237D3E7800B5F213 /* RatingSummaryView.xib */,
 				22406F78237D3F2700B5F213 /* RatingSummaryView.swift */,
-				3200A7AB243B7C560095EB2C /* UIViewExtension.swift */,
-				3200A7BE243C1EA40095EB2C /* UIImageExtension.swift */,
 				3200A7C0243C1ED80095EB2C /* ProgressBarColorStyle.swift */,
 			);
 			path = RatingSummaryReview;
+			sourceTree = "<group>";
+		};
+		32CF57EB243F0CF900CA58E1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				3200A7AB243B7C560095EB2C /* UIViewExtension.swift */,
+				3200A7BE243C1EA40095EB2C /* UIImageExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
